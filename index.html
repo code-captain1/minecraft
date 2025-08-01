@@ -1,0 +1,255 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Home Page</title>
+    <style>
+        *{
+            margin:0;
+            padding:0;
+            box-sizing: border-box;
+            font-family: 'Noto',sans-serif;
+        }
+        header{
+            width:100vw;
+            height:70px;
+            display: flex;
+            align-items: center;
+            padding:1rem;
+            box-shadow: 0 0 5px rgb(189, 183, 183);
+        }
+
+        .logo{
+            background-image:linear-gradient(60deg,#00ffee,#2bff00) ;
+            background-clip: text;
+            color:transparent;
+        }
+        
+        ul{
+            display: flex;
+            align-items:center;
+            justify-content:center ;
+            flex-direction: column;
+            width:100%;
+            height:100%;
+            background-color: transparent;
+            backdrop-filter: blur(10px);
+            border-radius: 20px;
+            gap:.5rem;
+        }
+
+        li{
+            list-style:none ;
+            font-size: 1.2rem;
+        }
+
+        .navbar{
+            width:100px;
+            height:70vh;
+            border-radius: 20px;
+            position:relative;
+            top:40%;
+            margin-left:.5rem;
+            transform:translateY(-50%);
+            background-color: hsl(180, 1%, 73%);
+        }
+
+        main{
+            width:100vw;
+            height:calc(100vh - 70px);
+            display: flex;
+            align-items: center;
+            
+        }
+
+        section{
+            overflow-y: scroll;
+            height:100%;
+            width:calc(100vw - 108px);
+            display: grid;
+            padding:1rem;
+            gap:1rem;
+            justify-content:center;
+            grid-template-columns: repeat(auto-fill,minmax(150px,300px));
+            grid-template-rows: repeat(4,minmax(200px,400px));
+        }
+        .card{
+            border-radius: 20px;
+            background-color: aliceblue;
+            position: relative;
+            cursor: pointer;
+            overflow: hidden;
+        }
+
+        .card img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            display: block;
+            border-radius: 20px;
+            background-size: cover;
+            background-repeat:no-repeat ;
+            background-position: center;
+        }
+
+           
+        
+        .card:hover{
+            transform: scale(1.1);
+        }
+
+        @media screen and (max-width:700px){
+            main{
+                overflow: hidden;
+                flex-direction: column;
+            }
+            .navbar{
+            width:70vw;
+            height:70px;
+            border-radius: 20px;
+            position:fixed;
+            top:auto;
+            z-index:100;
+            bottom:10px;
+            left:50%;
+            transform: translateX(-50%);
+            margin-left:.5rem;
+        }
+        ul{
+            display: flex;
+            align-items:center;
+            justify-content:center ;
+            flex-direction: row;
+            width:100%;
+            height:100%;
+            background-color: transparent;
+            backdrop-filter: blur(10px);
+            border-radius: 20px;
+        }
+
+        li{
+            list-style:none ;
+        }
+
+            section{
+            min-height:100vh;
+            width:100vw;
+            display: grid;
+            padding:1rem;
+            gap:1rem;
+            justify-content:center;
+            grid-template-columns: repeat(auto-fit,minmax(100px,300px));
+            grid-template-rows: repeat(10,minmax(200px,400px));
+        }
+    }
+    .cover{
+        width:100vw;
+        height:100vh;
+        z-index:-100;
+        position:fixed;
+        top:0;
+        left:0;
+        background-color: rgba(2, 1, 0, 0.377);
+        opacity: 0;
+        overflow: hidden;
+        display: flex;
+        align-items:center;
+        justify-content: end;
+        flex-direction: column;
+        flex-wrap: wrap;
+    }
+    .card.active{
+        left:50%;
+        top:50%;
+        width:50%;
+        height:50%;
+        position: fixed;
+        transform: translate(-50%,-50%);
+        z-index:650;
+    }
+    .cover.active{
+        opacity:1;
+        overflow:visible;
+        z-index:500;
+    }
+    .install{
+        width:40%;
+        height:50px;
+        background-image:linear-gradient(60deg,#00ffee,#2bff00);
+        cursor:pointer;
+        margin-bottom: 16px;
+        font-family: 'Noto',sans-serif;
+        border: none;
+        border-radius: 10px;
+        color:white;
+    }
+    .x{
+        position: fixed;
+        top:0;
+        left:auto;
+        right:16px;
+        font-size: 2.4rem;
+        color: aliceblue;  
+        cursor: pointer;
+    }
+    </style>
+    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+</head>
+<body>
+    <header>
+        <h1 class="logo">Play Tools</h1>
+    </header>
+    <main>
+        <nav class="navbar">
+            <ul>
+                <li><i class='bx bx-search'></i></li>
+                <li><i class='bx bx-plus-circle'></i></li>
+                <li><i class='bx bxs-home'></i></li>
+                <li><i class='bx bx-navigation'></i></li>
+            </ul>
+        </nav>
+        <section>
+            <div class="card card1"><img src="cool.webp" alt=""></div>
+            <div class="card card2"><img src="fortnite.webp" alt=""></div>
+            <div class="card card3"><img src="cooling.avif" alt=""></div>
+            <div class="card card4"><img src="roblox.avif" alt=""></div>
+            <div class="card card5"><img src="pokemon.avif" alt=""></div>
+            <div class="card card6"><img src="fc.avif" alt=""></div>
+            <div class="card card7"><img src="nba_.avif" alt=""></div>
+            <div class="card card8"><img src="carracing.jpg" alt=""></div>
+            <div class="card card9"><img src="cc.jpg" alt=""></div>
+            <div class="card card10"><img src="sonic.jpg" alt=""></div>
+        </section>
+    </main>
+<div class="cover">
+    <a href="https://www.mediafire.com/file/4dcm8f4htpnhqsu/12194_64bit.apk/file">
+        <button class="install">
+            Install
+        </button>
+    </a>
+    <i class='bx bx-x x'></i>
+</div>
+</body>
+<script>
+    const card = document.querySelectorAll('.card');
+    const cover = document.querySelector('.cover');
+    const x =document.querySelector('.x')
+    
+    card.forEach(card => {
+        card.addEventListener('click',(e)=>{
+            cover.classList.add('active');
+            card.classList.add('active');
+
+            x.addEventListener('click',(e)=>
+                {
+                    cover.classList.remove('active');
+                    card.classList.remove('active');
+                }
+            )
+        })
+    });
+
+
+</script>
+</html>
