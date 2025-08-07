@@ -5,210 +5,247 @@
     <script src="https://files.bpcontent.cloud/2025/08/07/11/20250807111821-CTEU70PY.js" defer></script> 
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Home Page</title>
+    <title>Play Tools Pro</title>
     <style>
-        *{
-            margin:0;
-            padding:0;
-            box-sizing: border-box;
-            font-family: 'Noto',sans-serif;
-        }
-        header{
-            width:100vw;
-            height:70px;
-            display: flex;
-            align-items: center;
-            padding:1rem;
-            box-shadow: 0 0 5px rgb(189, 183, 183);
-        }
+        @import url('https://fonts.googleapis.com/css2?family=Noto+Sans:ital,wght@0,100..900;1,100..900&family=Roboto:ital,wght@0,100..900;1,100..900&display=swap');
 
-        .logo{
-            background-image:linear-gradient(60deg,#00ffee,#2bff00) ;
-            background-clip: text;
-            color:transparent;
-        }
-        
-        ul{
-            display: flex;
-            align-items:center;
-            justify-content:center ;
-            flex-direction: column;
-            width:100%;
-            height:100%;
-            background-color: transparent;
-            backdrop-filter: blur(10px);
-            border-radius: 20px;
-            gap:.5rem;
-        }
+*{
+    margin:0;
+    padding:0;
+    box-sizing: border-box;
+    font-family: 'Noto',sans-serif;
+}
 
-        li{
-            list-style:none ;
-            font-size: 1.2rem;
-        }
+body{
+    overflow: hidden;
+}
 
-        .navbar{
-            width:100px;
-            height:70vh;
-            border-radius: 20px;
-            position:relative;
-            top:40%;
-            margin-left:.5rem;
-            transform:translateY(-50%);
-            background-color: hsl(180, 1%, 73%);
-        }
+header{
+    width:100vw;
+    height:70px;
+    padding:1rem;
+    box-shadow: 0 0 10px rgba(128, 128, 128, 0.336);
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
 
-        main{
-            width:100vw;
-            height:calc(100vh - 70px);
-            display: flex;
-            align-items: center;
-            
-        }
+li{
+    list-style: none; 
+    font-size: 1.2rem;
+    color: grey;
+    cursor: pointer;
+}
 
-        section{
-            overflow-y: scroll;
-            height:100%;
-            width:calc(100vw - 108px);
-            display: grid;
-            padding:1rem;
-            gap:1rem;
-            justify-content:center;
-            grid-template-columns: repeat(auto-fill,minmax(150px,300px));
-            grid-template-rows: repeat(4,minmax(200px,400px));
-        }
-        .card{
-            border-radius: 20px;
-            background-color: aliceblue;
-            position: relative;
-            cursor: pointer;
-            overflow: hidden;
-        }
+main{
+    width:100vw;
+    height: calc(100vh - 70px);
+    display: flex;
+    justify-content: space-between;
+}
 
-        .card img {
-            width: 100%;
-            height: 100%;
-            object-fit: cover;
-            display: block;
-            border-radius: 20px;
-            background-size: cover;
-            background-repeat:no-repeat ;
-            background-position: center;
-        }
+.head{
+    background-image:linear-gradient(60deg,#00fe61,#00ffff);
+    background-clip: text;
+    color:transparent;
+}
 
-           
-        
-        .card:hover{
-            transform: scale(1.1);
-        }
+.navbar-items{
+    width:100%;
+    height:100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    gap:1rem;
+}
 
-        @media screen and (max-width:700px){
-            main{
-                overflow: hidden;
-                flex-direction: column;
-            }
-            .navbar{
-            width:70vw;
-            height:70px;
-            border-radius: 20px;
-            position:fixed;
-            top:auto;
-            z-index:100;
-            bottom:10px;
-            left:50%;
-            transform: translateX(-50%);
-            margin-left:.5rem;
-        }
-        ul{
-            display: flex;
-            align-items:center;
-            justify-content:center ;
-            flex-direction: row;
-            width:100%;
-            height:100%;
-            background-color: transparent;
-            backdrop-filter: blur(10px);
-            border-radius: 20px;
-        }
 
-        li{
-            list-style:none ;
-        }
+.navbar{
+    width:150px;
+    height:400px;
+    background-color: rgba(0, 0, 0, 0.267);
+    align-self: center;
+    margin-left:.5rem;
+    border-radius: 30px;
+}
 
-            section{
-            min-height:100vh;
-            width:100vw;
-            display: grid;
-            padding:1rem;
-            gap:1rem;
-            justify-content:center;
-            grid-template-columns: repeat(auto-fit,minmax(100px,300px));
-            grid-template-rows: repeat(10,minmax(200px,400px));
-        }
-    }
-    .cover{
-        width:100vw;
-        height:100vh;
-        z-index:-100;
-        position:fixed;
-        top:0;
-        left:0;
-        background-color: rgba(2, 1, 0, 0.377);
-        opacity: 0;
-        overflow: hidden;
-        display: flex;
-        align-items:center;
-        justify-content: end;
-        flex-direction: column;
-        flex-wrap: wrap;
-    }
-    .card.active{
+section{
+    width:calc(100vw - 150px);
+    height:100%;
+    overflow-y: scroll;
+    display: grid;
+    grid-template-columns: repeat(auto-fit,minmax(100px,300px));
+    grid-template-rows: repeat(10,minmax(40vh,60vh));
+    gap:1rem;
+    grid-auto-flow: row;
+    padding: 1rem;
+    justify-content:center ;
+}
+
+img{
+    object-fit: cover;
+    width: 100%;
+    height:100%;
+    border-radius: 30px;
+}
+
+.card{
+    background-color: grey;
+    border-radius: 30px;
+    margin: 1rem;
+    cursor: pointer;
+
+}
+.card:hover{
+    transform: scale(1.1);
+}
+
+
+
+
+
+
+
+.install.active{
+    width:30vw;
+    height:70px;
+    background-image:linear-gradient(60deg,#29da6d,#03b1b1);
+    cursor: pointer;
+    z-index: 1000;
+    top:80%;
+    color: aliceblue;
+    left:50%;
+    position: fixed;
+    transform: translateX(-50%);
+    font-size: 1.2rem;
+    border:none;
+    border-radius:30px;
+}
+
+
+.card.active{
+    margin:0;
+    z-index:1000;
+    position: fixed;
+    top:50%;
+    left:50%;
+    transform: translate(-50%,-60%);
+    width:50%;
+    height:70%;
+}
+
+.x.active{
+    top:10%;
+    left:95%;
+    position: fixed;
+    font-size: 1.2rem;
+    cursor: pointer;
+    color: whitesmoke;
+    z-index: 10000;
+}
+
+
+
+
+
+
+
+@media screen and (max-width:750px) {
+    .navbar{
+        width:70vw;
+        height:70px;
+        z-index: 100;
+        position: fixed;
         left:50%;
-        top:50%;
-        width:50%;
-        height:50%;
-        position: fixed;
+        top:90%;
         transform: translate(-50%,-50%);
-        z-index:650;
+        background-color: hsla(0, 1%, 13%, 0.336);
+        backdrop-filter: blur(5px);
     }
-    .cover.active{
-        opacity:1;
-        overflow:visible;
-        z-index:500;
+    section{
+        width: 100vw;
     }
-    .install{
-        width:600%;
-        height:50px;
-        background-image:linear-gradient(60deg,#00ffee,#2bff00);
-        cursor:pointer;
-        margin-bottom: 16px;
-        font-family: 'Noto',sans-serif;
-        border: none;
-        border-radius: 10px;
-        color:white;
+    main{
+        padding: 0;
+        margin: 0;
     }
-    .x{
-        position: fixed;
-        top:0;
-        left:auto;
-        right:16px;
-        font-size: 2.4rem;
-        color: aliceblue;  
+
+    .navbar-items{
+        width:100%;
+        height:100%;
+        display: flex;
+        align-items: center;
+        flex-direction: row;
+        justify-content: center;
+        gap:1rem;
+    }
+
+
+    .install.active{
+        width:70vw;
+        height:70px;
+        background-image:linear-gradient(60deg,#29da6d,#03b1b1);
         cursor: pointer;
+        z-index: 1000;
+        top:80%;
+        color: aliceblue;
+        left:50%;
+        position: fixed;
+        transform: translateX(-50%);
+        font-size: 1.2rem;
+        border:none;
+        border-radius:30px;
     }
+
+
+    .card.active{
+        margin:0;
+        z-index:1000;
+        position: fixed;
+        top:50%;
+        left:50%;
+        transform: translate(-50%,-50%);
+        width:70%;
+        height:50%;
+    }
+
+}
+
+
+
+.items{
+    font-size: 1.2rem;
+    color:white;
+}
+
+.cover.active{
+    width:100vw;
+    height:100vh;
+    background-color: rgba(0, 0, 0, 0.651);
+    position: fixed;
+    top:0;
+    left:0;
+    z-index:500;
+}
+
     </style>
-    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+    <link href="https://cdn.jsdelivr.net/npm/@flaticon/flaticon-uicons@3.3.1/css/all/all.min.css" rel="stylesheet">
 </head>
 <body>
     <header>
-        <h1 class="logo">Play Tools</h1>
+        <h1 class="head">Play Tools</h1>
+        <ul>
+            <li><i class="fi fi-br-circle-user"></i></li>
+        </ul>
     </header>
     <main>
         <nav class="navbar">
-            <ul>
-                <li><i class='bx bx-search'></i></li>
-                <li><i class='bx bx-plus-circle'></i></li>
-                <li><i class='bx bxs-home'></i></li>
-                <li><i class='bx bx-navigation'></i></li>
+            <ul class="navbar-items">
+                <li class="items"><i class="fi fi-br-search"></i></li>
+                <li class="items"><i class="fi fi-sr-multiple"></i></li>
+                <li class="items"><i class="fi fi-ss-home"></i></li>
+                <li class="items"><i class="fi fi-bs-location-arrow"></i></li>
             </ul>
         </nav>
         <section>
@@ -224,34 +261,37 @@
             <div class="card card10"><img src="sonic.jpg" alt=""></div>
         </section>
     </main>
-<div class="cover">
-    <a href="https://www.mediafire.com/file/4dcm8f4htpnhqsu/12194_64bit.apk/file">
-        <button class="install">
-            Install
-        </button>
-    </a>
-    <i class='bx bx-x x'></i>
-</div>
-</body>
+
+    <div class="cover">
+
+    </div>
+   <a href="https://www.mediafire.com/file/4dcm8f4htpnhqsu/12194_64bit.apk/file"><button class="install">Install</button></a>
+    <i class="fi fi-br-cross x"></i>
 <script>
     const card = document.querySelectorAll('.card');
-    const cover = document.querySelector('.cover');
-    const x =document.querySelector('.x')
-    
-    card.forEach(card => {
-        card.addEventListener('click',(e)=>{
+const cover = document.querySelector('.cover');
+const install = document.querySelector('.install')
+const x = document.querySelector('.x');
+
+card.forEach(
+    (card)=>{
+        card.addEventListener('click',()=>{
             cover.classList.add('active');
             card.classList.add('active');
+            install.classList.add('active');
+            x.classList.add('active')
+            
 
-            x.addEventListener('click',(e)=>
-                {
-                    cover.classList.remove('active');
-                    card.classList.remove('active');
-                }
-            )
-        })
-    });
+            x.addEventListener('click',()=>{
+            cover.classList.remove('active');
+            card.classList.remove('active');
+            install.classList.remove('active');
+            x.classList.remove('active')
+})
+    
+        }
+)});
 
 </script>
+</body>
 </html>
-
